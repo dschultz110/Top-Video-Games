@@ -5,4 +5,6 @@ class Game < ApplicationRecord
   has_many :platforms, through: :game_platforms
 
   validates :name, :year, :sales, presence: true
+  validates :year, numericality: { only_integer: true }
+  validates :sales, numericality: true
 end
