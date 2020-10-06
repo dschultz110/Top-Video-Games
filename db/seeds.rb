@@ -17,7 +17,6 @@ puts "Loaded #{games.size} rows from the CSV file."
 games.each do |game|
   genre = Genre.find_or_create_by(name: game["Genre"])
   publisher = Publisher.find_or_create_by(name: game["Publisher"])
-  platform = Platform.find_or_create_by(name: game["Platform"])
 
   if genre&.valid? && genre&.valid?
     game_object = Game.create(
@@ -28,13 +27,18 @@ games.each do |game|
       sales:     game["Global_Sales"]
     )
   end
-  puts "Game: #{game_object.inspect}"
+
   puts "Could not create game: #{game['Name']}" unless game_object.valid?
 
-  if platform&.valid? && game_object&.valid?
-    GamePlatform.create(game: game_object, platform: platform)
-  else
-    puts "Invalid platform #{platform} for game: #{game['Name']}"
+  platforms = game["Platform"].split(",")
+  platforms.each do |platform|
+    platform_object = Platform.find_or_create_by(name: platform)
+
+    if platform_object&.valid? && game_object&.valid?
+      GamePlatform.create(game: game_object, platform: platform_object)
+    else
+      puts "Invalid platform: #{platform} for game: #{game_object.name}"
+    end
   end
 end
 
