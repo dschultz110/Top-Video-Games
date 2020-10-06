@@ -1,5 +1,5 @@
 {
-  "name": "Top_Video_Games",
+  "name": "top-video-games",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
