@@ -1,2 +1,12 @@
 <h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<h2><%= @game.name %></h2>
+<h3>Sales: <%= @game.sales %></h3>
+<p>Year: <%= @game.year %></p>
+<p>Genre: <%= @game.genre %></p>
+<p>Platforms: </p>
+<ul>
+    <% @game.platforms.each do |platform| %>
+        <li><%= platform.name %></li>
+    <% end %>
+</ul>
+<%= link_to 'All Games', root_path %>
