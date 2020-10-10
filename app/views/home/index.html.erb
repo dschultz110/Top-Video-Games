@@ -1,0 +1,25 @@
+<h1>Best Selling Video Games</h1>
+<h2>Top 20 Games - <%= link_to 'See All Games', games_path %> </h2>
+<ul>
+    <% @games.each do |game| %>
+        <li><%= game.name %></li>
+    <% end %>
+</ul>
+<h2>Platforms - <%= link_to 'See All Platforms', games_path %></h2>
+<ul>
+    <% @platforms.each do |platform| %>
+        <li><%= platform.name %></li>
+    <% end %>
+</ul>
+<h2>Genres - <%= link_to 'See All Genres', games_path %></h2>
+<ul>
+    <% @genres.each do |genre| %>
+        <li><%= genre.name %></li>
+    <% end %>
+</ul>
+<h2>Publishers - <%= link_to 'See All Publishers', games_path %></h2>
+<ul>
+    <% @publishers.each do |publisher| %>
+        <li><%= publisher.name %></li>
+    <% end %>
+</ul>
