@@ -10,13 +10,13 @@
         <li><%= platform.name %></li>
     <% end %>
 </ul>
-<h2>Genres - <%= link_to 'See All Genres', games_path %></h2>
+<h2>Genres - <%= link_to 'See All Genres', genres_path %></h2>
 <ul>
     <% @genres.each do |genre| %>
         <li><%= genre.name %></li>
     <% end %>
 </ul>
-<h2>Publishers - <%= link_to 'See All Publishers', games_path %></h2>
+<h2>Publishers - <%= link_to 'See All Publishers', publishers_path %></h2>
 <ul>
     <% @publishers.each do |publisher| %>
         <li><%= publisher.name %></li>

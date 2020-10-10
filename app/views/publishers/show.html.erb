@@ -1,0 +1,6 @@
+<h2>Games by <%= @publisher.name %></h2>
+<ul>
+    <% @publisher.games.each do |game| %>
+        <li><%= link_to game.name, game %></li>
+    <% end %>
+</ul>

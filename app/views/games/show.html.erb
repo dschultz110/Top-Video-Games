@@ -1,7 +1,8 @@
 <h2><%= @game.name %></h2>
 <h3>Sales: <%= @game.sales %> million</h3>
 <p>Year: <%= @game.year %></p>
-<p>Genre: <%= @game.genre.name %></p>
+<p>Genre: <%= link_to @game.genre.name, @game.genre %></p>
+<p>Publisher: <%= link_to @game.publisher.name, @game.publisher %></p>
 <p>Platforms: </p>
 <ul>
     <% @game.platforms.each do |platform| %>
