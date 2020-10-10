@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def index
-    @games = Game.includes(:publisher, :genre).order("sales DESC")
+    @games = Game.includes(:publisher, :genre).order("name ASC")
   end
 
   def show
