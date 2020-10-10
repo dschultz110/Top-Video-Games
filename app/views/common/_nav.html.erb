@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="twelve columns">
+        <header>
+            <h1><%= link_to "Best Selling Video Games", root_path %></h1>
+            <h2>A collection of the Mulla family's best recipes accumulated over the past generation.</h2>
+            <nav>
+                <div class="container">
+                    <div class="one-half column">
+                        <ul class="navbar-list main-links">
+                            <li class="navbar-item">
+                                <%= link_to "Home", root_path, class: "navbar-link" %>
+                            </li>
+                            <li class="navbar-item">
+                                <%= link_to "About", root_path, class: "navbar-link" %>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="one-half column">
+                        <ul class="navbar-list meta-links">
+                            <li class="navbar-item">
+                                <%= link_to "Games", games_path, class: "navbar-link" %>
+                            </li>
+                            <li class="navbar-item">
+                                <%= link_to "Publishers", publishers_path, class: "navbar-link" %>
+                            </li>
+                            <li class="navbar-item">
+                                <%= link_to "Genres", genres_path, class: "navbar-link" %>
+                            </li>
+                            <li class="navbar-item">
+                                <%= link_to "Platforms", platforms_path, class: "navbar-link" %>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="content"></div>
+        </header>
+    </div>
+</div>

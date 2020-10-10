@@ -7,12 +7,19 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <div class="container">
-    <h1><%= link_to "Best Selling Video Games", root_path %></h1>
-    <%= yield %>
-    </div>
+    <%= render partial: 'common/nav' %>
+    <main>
+      <div class="container">
+        <div class="twelve columns">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
