@@ -1,6 +1,17 @@
 <aside>
     <div class="row">
         <div class="twelve columns">
+            <ul class="navbar-list search">
+                <li class="navbar-item">
+                    <%= form_for "", url: games_path, role: "search", method: :get do %>
+                        <% text_field_tag :search, @search_term, placeholder: "Search games..." %>
+                    <% end %>
+                </li>
+            </li>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
             <form action="search.php" method="post">
                 <ul class="navbar-list search">
                     <li class="navbar-item">

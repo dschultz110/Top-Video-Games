@@ -8,4 +8,8 @@ class Game < ApplicationRecord
   validates :name, uniqueness: true
   validates :year, numericality: { only_integer: true }
   validates :sales, numericality: true
+
+  def self.search_by(search_term)
+    where("LOWER(name) LIKE :search_term", search_term: "%#{search_term.downcase}%")
+  end
 end
