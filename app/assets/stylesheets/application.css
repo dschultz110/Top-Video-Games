@@ -1,15 +1,22 @@
+/**
+*= require_tree .
+*= require_self
+*/
+
 html{
-    font-size: 16px;
-    background: #fefff7;
+    font-size: 10px;
+    background: #2A3950;
 }
 body{
     margin-top: 20px;
+    color: #fff;
+    font-family: 'Nunito Sans', sans-serif;
 }
 h1, h2, h3, h4, h5, h6{
-    font-family: 'Playfair Display', serif;
+    font-family: 'Ubuntu Mono', mono;
 }
 a{
-    color: #228a9a;
+    color: #FF7582;
     text-decoration: none;
     transition: 0.3s ease;
 }
@@ -17,24 +24,39 @@ a:hover{
     color: #b6e1e7;
 }
 main{
-    width: 90%;
-    margin: 0px auto;
     padding-bottom: 20px;
 }
 .capitalize{
     text-transform: capitalize;
 }
 
-/* ----- navbar ----- */
-header{
-    width: 90%;
-    margin: 0 auto;
+/* ----- sidebar ----- */
+aside input[type="text"],
+aside input[type="submit"],
+aside select{
+    width: 177px;
 }
+aside ul{
+    list-style: none;
+    padding-left: 5px;
+}
+.sidebar-tags{
+    display: inline;
+}
+.sidebar-tags::after{
+    content: "|";
+    color: #725A7A;
+    font-size: 14px;
+}
+.sidebar-tags:last-child::after{
+    content: "";
+}
+
+/* ----- navbar ----- */
 nav {
-    border-top: 1px solid #b00e19;
-    margin: 0;
+    border-top: 1px solid #725A7A;
     width: 100%;
-    background-color: #fefff7;
+    background-color: #2A3950;
     z-index: 99;
 }
 nav > .container{
@@ -43,7 +65,6 @@ nav > .container{
 .navbar-list{
     list-style: none;
     margin-bottom: 0;
-    margin-top: 0;
 }
 .navbar-item{
     position: relative;
@@ -52,12 +73,11 @@ nav > .container{
 }
 .navbar-link{
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 0.2rem;
     margin-right: 35px;
-    margin-top: 0px;
     text-decoration: none;
-    line-height: 3.5rem;
+    line-height: 6.5rem;
 
     /* from https://github.com/IanLunn/Hover/blob/master/css/hover.css */
     display: inline-block;
@@ -75,7 +95,7 @@ nav > .container{
     left: 0;
     right: 0;
     bottom: 0;
-    background:#228a9a;
+    background:#FF7582;
     height: 4px;
     -webkit-transform: translateY(4px);
     transform: translateY(4px);
@@ -92,31 +112,27 @@ nav > .container{
 .navbar-link:active:before {
     -webkit-transform: translateY(0);
     transform: translateY(0);
-    color: #228a9a;
+    color: #FF7582;
 }
-.main-links{
-    float:left;
-    margin-left: 0;
-    margin-right: 20px;
-}
-.meta-links{
+.other-links{
     float: right;
+}
+.other-links a{
     margin-right: 0;
-    margin-left: 20px;
+    margin-left: 35px;
 }
 .sticky{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    border-bottom: 1px solid #b00e19;
+    border-bottom: 1px solid #725A7A;
     border-top: none;
 }
 .content{
-    padding: 20px;
-    width: 100%;
+    padding: 15px;
 }
-.sticky .content {
+.sticky + .content {
     padding-top: 85px;
 }
 nav form{
@@ -133,6 +149,43 @@ nav form input[type="submit"]{
     margin-left: 2px;
 }
 
+/* ----- recipes ----- */
+.recipe-name,
+.user-name{
+    color: #725A7A;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.recipe-name:active,
+.user-name:active,
+.recipe-name:hover,
+.user-name:hover{
+    color: #d4999d;
+}
+.recipe-name{
+    font-size: 1.3em;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.user-name{
+    float: right;
+}
+.tag {
+    display: inline;
+}
+.tag::after{
+    content: " |";
+    color: #725A7A;
+    font-size: 14px;
+}
+.tag:last-child::after{
+    content: "";
+}
+.title{
+    text-decoration: underline;
+}
+
 /* ----- form overrides ----- */
 input[type="email"],
 input[type="number"],
@@ -143,8 +196,8 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
-    background-color: #fefff7;
-    border: 1px solid #228a9a;
+    background-color: #2A3950;
+    border: 1px solid #FF7582;
 }
 input[type="email"]:focus,
 input[type="number"]:focus,
@@ -155,7 +208,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-    border: 1px solid #b00e19;
+    border: 1px solid #725A7A;
 }
 
 /* ----- button overrides ----- */
@@ -164,9 +217,9 @@ button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
-    color: #fefff7;
-    background-color: #228a9a;
-    border-color: #228a9a;
+    color: #2A3950;
+    background-color: #FF7582;
+    border-color: #FF7582;
     transition: 0.3s ease;
 }
 .button.button-primary:hover,
@@ -179,18 +232,18 @@ button.button-primary:focus,
 input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
-    color: #228a9a;
-    background-color: #fefff7;
-    border-color: #228a9a;
+    color: #FF7582;
+    background-color: #2A3950;
+    border-color: #FF7582;
 }
 .button,
 button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-    color: #b00e19;
-    background-color: #fefff7;
-    border-color: #b00e19;
+    color: #725A7A;
+    background-color: #2A3950;
+    border-color: #725A7A;
     transition: 0.3s ease;
 }
 .button:hover,
@@ -203,9 +256,9 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-    color: #fefff7;
-    background-color: #b00e19;
-    border-color: #fefff7;
+    color: #2A3950;
+    background-color: #725A7A;
+    border-color: #2A3950;
 }
 
 input[type="submit"].nostyle{

@@ -8,16 +8,18 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Ubuntu+Mono:ital@1&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <%= render partial: 'common/nav' %>
     <main>
       <div class="container">
-        <div class="twelve columns">
+        <div class="nine columns">
           <%= yield %>
+        </div>
+        <div class="three columns">
+          <%= render partial: 'common/side', locals: { genres: @sidebar_genres, platforms: @sidebar_platforms, games: @sidebar_games } %>
         </div>
       </div>
     </main>

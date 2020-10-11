@@ -1,0 +1,47 @@
+<aside>
+    <div class="row">
+        <div class="twelve columns">
+            <form action="search.php" method="post">
+                <ul class="navbar-list search">
+                    <li class="navbar-item">
+                        <input placeholder="Search games..." type="text" name="searchTerm">
+                    </li>
+                    <li class="navbar-item">
+                    <select name="navbarPlatform" id="navbarPlatform">
+                        <% @sidebar_platforms.each do |sidebar_platform| %>
+                            <option value="<%= sidebar_platform.name %>"><%= sidebar_platform.name %></option>
+                        <% end %>
+                    </select>
+                    </li>
+                    <li class="navbar-item">
+                        <input name="search" type="submit" class="button-primary" value="Search">
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <h4>Genres: </h4>
+            <ul>
+                <% @sidebar_genres.each do |sidebar_genre| %>
+                    <li class="sidebar-tags capitalize">
+                        <%= link_to sidebar_genre.name, sidebar_genre %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <h4>Top 20 Games: </h4>
+            <ul>
+                <% @sidebar_games.each do |sidebar_game| %>
+                    <li>
+                        <%= link_to sidebar_game.name, sidebar_game %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</aside>
