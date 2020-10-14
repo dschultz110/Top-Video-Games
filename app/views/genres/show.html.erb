@@ -2,7 +2,9 @@
 
 <h3><%= @genre.name %> Games</h3>
 <ul>
-    <% @genre.games.each do |game| %>
+    <% @games.each do |game| %>
         <li><%= link_to game.name, game %></li>
     <% end %>
 </ul>
+<hr>
+<%= will_paginate @games %>
