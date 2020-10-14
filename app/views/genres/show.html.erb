@@ -1,3 +1,5 @@
+<% content_for(:html_title) { @genre.name } %>
+
 <h3><%= @genre.name %> Games</h3>
 <ul>
     <% @genre.games.each do |game| %>
