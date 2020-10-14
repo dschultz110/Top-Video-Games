@@ -1,4 +1,4 @@
-<h2>All Video Games</h2>
+<h3><%= @search ? "Games found for '#{@search_term}':" : "All Video Games" %></h3>
 <ul>
     <% @games.each do |game| %>
         <li><%= link_to game.name, game %></li>

@@ -5,5 +5,6 @@ class GenresController < ApplicationController
 
   def show
     @genre = Genre.find(params[:id])
+    @games = @genre.games.order("name ASC")
   end
 end

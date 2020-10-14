@@ -5,5 +5,6 @@ class PublishersController < ApplicationController
 
   def show
     @publisher = Publisher.find(params[:id])
+    @games = @publisher.games.order("name ASC")
   end
 end

@@ -1,14 +1,22 @@
 <div class="row">
-<h3><%= @game.name %></h3>
-<h3>Sales: <%= @game.sales %> million</h3>
-<p>Year: <%= @game.year %></p>
-<p>Genre: <%= link_to @game.genre.name, @game.genre %></p>
-<p>Publisher: <%= link_to @game.publisher.name, @game.publisher %></p>
-<p>Platforms: </p>
+    <h3><%= @game.name %></h3>
+    <h4>Sales: <%= @game.sales %> million</h4>
+</div>
+<div class="row">
+    <div class="four columns">
+        <h5>Year: <%= @game.year %></h5>
+    </div>
+    <div class="four columns">
+        <h5>Genre: <%= link_to @game.genre.name, @game.genre %></h5>
+    </div>
+    <div class="four columns">
+        <h5>Publisher: <%= link_to @game.publisher.name, @game.publisher %></h5>
+    </div>
+</div>
+<h5>Platforms: </h5>
 <ul>
     <% @game.platforms.each do |platform| %>
         <li><%= link_to platform.name, platform %></li>
     <% end %>
 </ul>
 <%= link_to 'All Games', games_path %>
-</div>

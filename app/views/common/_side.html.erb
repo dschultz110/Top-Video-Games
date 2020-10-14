@@ -7,28 +7,7 @@
                         <% text_field_tag :search, @search_term, placeholder: "Search games..." %>
                     <% end %>
                 </li>
-            </li>
-        </div>
-    </div>
-    <div class="row">
-        <div class="twelve columns">
-            <form action="search.php" method="post">
-                <ul class="navbar-list search">
-                    <li class="navbar-item">
-                        <input placeholder="Search games..." type="text" name="searchTerm">
-                    </li>
-                    <li class="navbar-item">
-                    <select name="navbarPlatform" id="navbarPlatform">
-                        <% @sidebar_platforms.each do |sidebar_platform| %>
-                            <option value="<%= sidebar_platform.name %>"><%= sidebar_platform.name %></option>
-                        <% end %>
-                    </select>
-                    </li>
-                    <li class="navbar-item">
-                        <input name="search" type="submit" class="button-primary" value="Search">
-                    </li>
-                </ul>
-            </form>
+            </ul>
         </div>
     </div>
     <div class="row">

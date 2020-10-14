@@ -1,0 +1,53 @@
+<h2>About This Website</h2>
+<h3>Description</h3>
+<p>This website uses a video game sales dataset which has a list of the best selling video games and their platform, genre, sales, publisher, year, and genre. <a href="https://www.kaggle.com/gregorut/videogamesales">The raw dataset</a> has been cleaned to combine the platforms into a single column, and the sales to be added together for each game. A game has one publisher, one genre, and many platforms.</p>
+
+<h3>Dataset Columns</h3>
+<ul>
+    <li>Rank:int</li>
+    <li>Name:string</li>
+    <li>Platform:string</li>
+    <li>Year:integer</li>
+    <li>Genre:string</li>
+    <li>Publisher:string</li>
+    <li>Gloabl_Sales:decimal</li>
+</ul>
+
+<h3>Database Tables</h3>
+<ul>
+    <li>Games
+        <ul>
+            <li>Rank</li>
+            <li>Name</li>
+            <li>Platform (FK)</li>
+            <li>Year</li>
+            <li>Genre (FK)</li>
+            <li>Publisher (FK)</li>
+            <li>Global_Sales</li>
+        </ul>
+    </li>
+    <li>Platforms
+        <ul>
+            <li>Name</li>
+        </ul>
+    </li>
+        <li>Genres
+        <ul>
+            <li>Name</li>
+        </ul>
+    </li>
+        <li>Publishers
+        <ul>
+            <li>Name</li>
+        </ul>
+    </li>
+        <li>GamePlatforms
+        <ul>
+            <li>Game</li>
+            <li>Platform</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>ERD</h3>
+<%= image_tag "VideoGameERD.png" %>

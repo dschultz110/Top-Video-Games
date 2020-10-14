@@ -5,4 +5,6 @@ class HomeController < ApplicationController
     @genres = Genre.order("name ASC")
     @publishers = Publisher.limit(20)
   end
+
+  def about; end
 end
