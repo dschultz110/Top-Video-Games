@@ -1,6 +1,6 @@
 class PublishersController < ApplicationController
   def index
-    @publishers = Publisher.order("name ASC")
+    @publishers = Publisher.order("name ASC").paginate(:page => params[:page], per_page: 50)
   end
 
   def show

@@ -12,11 +12,11 @@
     </div>
     <div class="row">
         <div class="twelve columns">
-            <h4>Genres: </h4>
+            <h4>Top 20 Games: </h4>
             <ul>
-                <% @sidebar_genres.each do |sidebar_genre| %>
-                    <li class="sidebar-tags capitalize">
-                        <%= link_to sidebar_genre.name, sidebar_genre %>
+                <% @sidebar_games.each do |sidebar_game| %>
+                    <li>
+                        <%= link_to sidebar_game.name, sidebar_game %>
                     </li>
                 <% end %>
             </ul>
@@ -24,11 +24,11 @@
     </div>
     <div class="row">
         <div class="twelve columns">
-            <h4>Top 20 Games: </h4>
+            <h4>Genres: </h4>
             <ul>
-                <% @sidebar_games.each do |sidebar_game| %>
-                    <li>
-                        <%= link_to sidebar_game.name, sidebar_game %>
+                <% @sidebar_genres.each do |sidebar_genre| %>
+                    <li class="sidebar-tags capitalize">
+                        <%= link_to sidebar_genre.name, sidebar_genre %>
                     </li>
                 <% end %>
             </ul>
